@@ -7,6 +7,7 @@
  * - How to draw the chart.
  *
  * @author: Tanya L. Crenshaw
+ * @author: Scott Rowland
  * @since: Jan 6, 2015
  */
 
@@ -57,6 +58,10 @@ function drawChart() {
         },
 	legend: { 
 	    position: 'none' 
+	},
+	animation: {
+		"startup" : true,
+		"duration" : 500
 	}
     };
 
