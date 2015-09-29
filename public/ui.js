@@ -4,7 +4,12 @@
  * Defines functionality for instrumenting the user-interface.                                                                     
  *                                                                                                                                 
  */
-
+var fetch = function() {
+	var el = document.getElementById('year');
+	var elVal = el.value;
+	console.log(elVal);
+	vizController(elVal);
+};
 var toggle = function() {
 
     //console.log('About!');
@@ -32,10 +37,12 @@ var initialize = function() {
     // Grab the 'About' button element, identified by the                                                                          
     // 'about-btn' id.                                                                                                             
     var button = document.getElementById('about-btn');
+    var btn = document.getElementById('submit-btn');
 
     // From this point forward, when the button is clicked, the                                                                   
     // toggle function shall be invoked.                                                                                           
     button.onclick = toggle;
+    btn.onclick = fetch;
     
 
 };
