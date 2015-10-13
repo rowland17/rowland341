@@ -4,6 +4,9 @@
  * Defines functionality for instrumenting the user-interface.                                                                     
  *                                                                                                                                 
  */
+var librs = librs || {};
+librs.ui = {};
+librs.ui = function() {
 var fetch = function() {
 	var el = document.getElementById('year');
 	var elVal = el.value;
@@ -18,13 +21,13 @@ var toggle = function() {
     var el = document.getElementById('about');
 
     // Add the class “show” to the element.
-    if(hasClass(el, 'show'))
+    if(librs.utility.hasClass(el, 'show'))
     {
-   		removeClass(el, 'show');
+   		librs.utility.removeClass(el, 'show');
     }
     else
     {
-    	addClass(el, 'show');
+    	librs.utility.addClass(el, 'show');
     }
     
 
@@ -51,3 +54,10 @@ var initialize = function() {
 // the js is loaded after the DOM is loaded.  It is a                                                                              
 // good time to initialize the UI elements in the page.                                                                            
 initialize();
+
+}; //end module librs
+
+// Invoke module. After invocation, the module’s code is now added to
+// the namespace and is accessible through the librs object.                                                                                                                                                   
+librs.ui();
+
